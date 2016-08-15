@@ -1,0 +1,46 @@
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} </div>
+    <div class="content">
+        <form action="" method="post">
+            <div class="input">
+                <label for="input1">登录名称</label>
+                <input type="text" name="username" value="{=$data['role']['username']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">登录密码</label>
+                <input type="text" name="password" value="{=$data['role']['password']=}"> <br>
+            </div>            
+            <div class="input">
+                <label for="input1">真实名称</label>
+                <input type="text" name="roleName" value="{=$data['role']['name']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input2">权限分配</label>
+                <table>
+                {=if is_array($data['act'])=}
+                {=foreach from=$data['act'] key="key" item="val"=}
+                <tr><td> <strong>{=$val['title']=}</strong> </td><td>
+                    {=foreach from=$val['subact'] key="k" item="value"=}
+                        <div class="left" style="padding:5px 0;width:25%">
+                            <label for="iphonecheck" class="inline">{=$value['title']=}</label>
+                            <input type="checkbox" name="roleAct[]" class="iphone"
+                                   {=foreach from=$data['role']['act'] item="v1"=}
+                                   {=if $value['id'] eq $v1=} checked {=/if=}
+                                   {=/foreach=}
+                                    value="{=$value['id']=}">
+                        </div>
+                    {=/foreach=}
+                </td></tr>
+                {=/foreach=}
+                {=/if=}
+                </table>
+            </div>
+
+            <div class="submit clear">
+                <br> <br>
+                <input type="submit" name="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>

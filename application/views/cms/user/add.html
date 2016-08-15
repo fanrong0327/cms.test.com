@@ -1,0 +1,53 @@
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} </div>
+    <div class="content">
+        <form action="" method="post">
+            <div class="input">
+                <label for="input1">站点名称</label>
+                <input type="text" name="name" value="{=$data['content']['name']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">发布地址</label>
+                <input type="text" name="url" value="{=$data['content']['url']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">数据库主机</label>
+                <input type="text" name="dbhost" value="{=$data['content']['dbhost']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">数据库端口</label>
+                <input type="text" name="dbport" value="{=$data['content']['dbport']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">数据库用户</label>
+                <input type="text" name="dbuser" value="{=$data['content']['dbuser']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">数据库密码</label>
+                <input type="text" name="dbpass" value="{=$data['content']['dbpass']=}"> <br>
+            </div>
+            <div class="input">
+                <label for="input1">是否启用</label>
+                <select name="isuse">
+                <option value="1" {=if $data['content']['isuse'] eq 1=}selected{=/if=}>是</option>
+                <option value="0" {=if $data['content']['isuse'] eq 0=}selected{=/if=}>否</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="input1">是否隐藏</label>
+                <select name="ishide">
+                <option value="1" {=if $data['content']['ishide'] eq 1=}selected{=/if=}>是</option>
+                <option value="0" {=if $data['content']['ishide'] eq 0=}selected{=/if=}>否</option>
+                </select>
+
+            </div>
+            <div class="submit clear">
+                {=if $data['content'].id gt 0 =}
+                <input type='hidden' name='id' value="{=$data['content'].id=}"/><br/>
+                {=/if=}
+                <input type="submit" name="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>

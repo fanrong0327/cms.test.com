@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{=$baseurl=}">
+        <title>{=$title=}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <link rel="stylesheet" href="/css/jquery.treeview.css" />
+        <link rel="stylesheet" href="/css/left.css" />
+
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#browser").treeview({
+                    toggle: function() {
+                        console.log("%s was toggled.", $(this).find(">span").text());
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <ul id="browser" class="filetree treeview-famfamfam">
+                {=if is_array($all_act_arr)=}
+                {=foreach from=$all_act_arr item="act"=}
+                {=if $act['display'] neq 'no'=}
+                <li class="closed"><span class="folder">{=$act['title']=}</span>
+                    {=if is_array($act['subact'])=}
+                    <ul>
+                        {=foreach from=$act['subact'] item="subact"=}
+                        {=if $subact['display'] eq 'yes'=}
+                        <li><span class="file"><a href="{=$subact['target']=}" target="mainframe"> {=$subact['title']=} </a></span></li>
+                        {=/if=}
+                        {=/foreach=}
+                    </ul>                    
+                    {=/if=}
+                </li>
+                {=/if=}
+                {=/foreach=}
+                {=/if=}
+                <li class="closed"><span class="folder">系统管理</span>
+                    <ul>
+                        <li><span class="file"><a href="javascript:void(0);" onclick="window.top.location='/account/logout';" class=""> 退出登录 </a></span></li>
+                    </ul>                    
+                </li>
+            </ul>
+        </div>
+     </body>
+</html>

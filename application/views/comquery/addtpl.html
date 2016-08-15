@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+        <!-- CONTENT --> 
+        <div id="content" class="white">
+            <h1> 站点管理 </h1>
+            <div class="bloc">
+                <div class="title"> 修改模板 </div>
+                <div class="content">
+                    <form action="" method="post">
+                        <div class="input">
+                            <label for="input1">模板名称</label>
+                            <input type="text" name="tname" value="{=if isset($data['tname'])=}{=$data['tname']=}{=/if=}"> <br>
+                        </div>
+                        <div class="input">
+                            <label for="input1">表名</label>
+                            <input type="text" name="table" value="{=if isset($data['table'])=}{=$data['table']=}{=/if=}"> <br>
+                        </div>
+                        <div class="input">
+                            <label for="input1">数据来源(必选)</label>
+                            <select name="from">
+                                {=foreach from=$dbs key="db_id" item="list"=}
+                                <option value="{=$db_id=}" {=if isset($data['from']) =}{=if $db_id eq $data['from']=} selected {=/if=}{=/if=}>{=$list['name']=}</option>
+                                {=/foreach=}
+                            </select>
+                        </div>
+                        <div class="input">
+                            <label for="input1">缓存时间</label>
+                            <input type="text" name="mctime" value="{=if isset($data['mctime'])=}{=$data['mctime']=}{=/if=}"> <br>
+                        </div>
+
+                        <div class="submit clear">
+                            <input type="submit" name="submit" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+

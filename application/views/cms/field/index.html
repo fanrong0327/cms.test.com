@@ -1,0 +1,45 @@
+<style type="text/css">
+    td { line-height: 20px; }
+</style>
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} <a href="field/add?siteid={=$data.siteid=}&tplid={=$data.tplid=}" title="添加域"><img src="img/icons/actions/edit.png" alt="" />添加域</a></div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> 域名称 </th>
+                    <th> 域类型 </th>
+                    <th> 域状态 </th>
+                    <th> 列表显示 </th>
+                    <th> 排序 </th>
+                    <th> 操作 </th>
+                </tr>
+            </thead>
+            <tbody>
+                {=if is_array($data['lists'])=}
+                {=foreach from=$data['lists'] item="item"=}
+                <tr>
+                    <td> {=$item['id']=} </td>
+                    <td> {=$item['name']=}</td>
+                    <td> 
+                        {=foreach from=$data['fieldtype'] item="fieldtype"=}
+                        {=if $item['fieldtype'] eq $fieldtype['id']=}
+                        {=$fieldtype['name']=}
+                        {=/if=}
+                        {=/foreach=}
+                    </td>
+                    <td> {=if $item['status'] eq 2=}启用{=else=}未启用{=/if=}</td>
+                    <td> {=if $item['isdisplay'] eq 2=}显示{=else=}不显示{=/if=}</td>
+                    <td> {=$item['morder']=} </td>
+                    <td class="actions">
+                    <a href="field/edit?siteid={=$data.siteid=}&tplid={=$data.tplid=}&id={=$item['id']=}" title="编辑"><img src="img/icons/actions/edit.png" alt="" /></a>
+                    </td>
+                </tr>
+                {=/foreach=}
+                {=/if=}
+            </tbody>
+        </table>
+    </div>
+</div>

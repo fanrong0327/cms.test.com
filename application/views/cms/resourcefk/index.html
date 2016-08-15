@@ -1,0 +1,104 @@
+<style type="text/css">
+    td { line-height: 20px; }
+</style>
+<h1> {=$data['title']=} </h1>
+    {=if $noticemsg eq 1=}
+    <div class="notif success bloc">
+        <strong>成功 :</strong>上传解压zip文件成功 {=if $noticemsg1 neq ''=}<br/>{=$noticemsg1 nofilter=}{=/if=}
+        <a href="#" class="close">x</a>
+    </div>
+    {=elseif $noticemsg eq 2=}
+    <div class="notif success bloc">
+        <strong>失败 :</strong>文件或目录存在，不能解压  {=if $noticemsg1 neq ''=}<br/>{=$noticemsg1 nofilter=}{=/if=}
+        <a href="#" class="close">x</a>
+    </div>
+    {=elseif $noticemsg eq 3=}
+    <div class="notif success bloc">
+        <strong>成功 :</strong>文件上传成功  {=if $noticemsg1 neq ''=}<br/>{=$noticemsg1 nofilter=}{=/if=}
+        <a href="#" class="close">x</a>
+    </div>
+    {=elseif $noticemsg eq 4=}
+    <div class="notif success bloc">
+        <strong>成功 :</strong>目录创建成功  {=if $noticemsg1 neq ''=}<br/>{=$noticemsg1 nofilter=}{=/if=}
+        <a href="#" class="close">x</a>
+    </div>
+    {=elseif $noticemsg eq 5=}
+    <div class="notif success bloc">
+        <strong>失败 :</strong>目录创建失败  {=if $noticemsg1 neq ''=}<br/>{=$noticemsg1 nofilter=}{=/if=}
+        <a href="#" class="close">x</a>
+    </div>
+    {=/if=}
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} </div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th> 名称 </th>
+                    <th> 文件数 </th>
+                    <th> 链接 </th>
+                    <th> 操作 </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <a href='resourcefk?siteid={=$data.siteid=}&dir={=$data.updir=}'>..返回</a> </td>
+                    <td></td>
+                    <td></td>
+                    <td class="actions"></td>
+                </tr>
+                {=if is_array($data['lists'])=}
+                {=foreach from=$data['lists'] item="item"=}
+                <tr>
+                    {=if $item.type eq 'dir'=}
+                    <td> <a href='resourcefk?siteid={=$data.siteid=}&dir={=$data.dir=}/{=$item['name']=}'>{=$item['name']=}</a> </td>
+                    <td>{=$item['size']=}</td>
+                    <td></td>
+                    {=else=}
+                    <td> {=$item['name']=} </td>
+                    <td>1</td>
+                    <td> {=$item['publishurl']=}</td>
+                    {=/if=}
+                    <td class="actions">
+                        <!--a href="field/edit?siteid={=$data.siteid=}=}" title="编辑"><img src="img/icons/actions/edit.png" alt="" /></a-->
+                        <a href="resourcefk/delete?siteid={=$data.siteid=}&dir={=$data.dir=}/{=$item['name']=}" title="删除" onclick="return confirm('确认删除？');"><img src="img/icons/actions/delete.png" ></a>
+                    </td>
+                </tr>
+                {=/foreach=}
+                {=/if=}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="bloc left">
+    <div class="title">添加目录</div>
+    <div class ="content">
+        <form action="" method="post">
+            <div class="input">
+                <input type="text" name="name" value="">
+            </div>
+            <div class="submit clear">
+                <input type='hidden' name='siteid' value='{=$data.siteid=}'/>
+                <input type='hidden' name='dir' value='{=$data.dir=}'/>
+                <input type="submit" name="submit" value="添加">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="bloc right">
+    <div class="title">上传文件</div>
+    <div class ="content">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class='input'>
+            <input type="file" id="file" name="file"><br/>
+            上传后解压zip文件：<input type="checkbox" name='unzip' class='checkbox'>
+            </div>
+            <div class="submit clear">
+                <input type='hidden' name='siteid' value='{=$data.siteid=}'/>
+                <input type='hidden' name='dir' value='{=$data.dir=}'/>
+                <input type="submit" name="submit" value="上传">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<style type="text/css">
+    td { line-height: 20px; }
+</style>
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} <a href="action/add" title="添加操作"><img src="img/icons/actions/edit.png" alt="" />添加操作</a></div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> 操作名称 </th>
+                    <th> 链接地址 </th>
+                    <th> 验证字符 </th>
+                    <th> 菜单中显示 </th>
+                    <th> 排序 </th>
+                    <th> 操作 </th>
+                </tr>
+            </thead>
+            <tbody>
+                {=if is_array($data['lists'])=}
+                {=foreach from=$data['lists'] item="item"=}
+                <tr>
+                    <td> {=$item['id']=} </td>
+                    <td> <img src="img/icons/menu/dark/{=$item['icon']=}"><strong>{=$item['title']=}</strong> </td>
+                    <td> {=$item['target']=} </td>
+                    <td> {=$item['verify']=} </td>
+                    <td> {=$item['display']=} </td>
+                    <td> {=$item['orderby']=} </td>
+                    <td class="actions"><a href="action/edit/{=$item['id']=}" title="编辑"><img src="img/icons/actions/edit.png" alt="" /></a>
+                    <a href="action/delete/{=$item['id']=}" title="删除" onclick="return confirm('确认删除？');"><img src="img/icons/actions/delete.png" ></a></td>
+                </tr>
+                {=if is_array($item['subact'])=}
+                {=foreach from=$item['subact'] item="subact"=}
+                <tr>
+                    <td> {=$subact['id']=} </td>
+                    <td> __  {=$subact['title']=} </td>
+                    <td> {=$subact['target']=} </td>
+                    <td> {=$subact['verify']=} </td>
+                    <td> {=$subact['display']=} </td>
+                    <td> {=$subact['orderby']=} </td>
+                    <td class="actions"><a href="action/edit/{=$subact['id']=}" title="编辑"><img src="img/icons/actions/edit.png" alt="" /></a>
+                    <a href="action/delete/{=$subact['id']=}" title="删除" onclick="return confirm('确认删除？');"><img src="img/icons/actions/delete.png" ></a></td>
+                </tr>
+                {=/foreach=}
+                {=/if=}
+                {=/foreach=}
+                {=/if=}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+        <!-- CONTENT --> 
+        <div id="content" class="white">
+            <style type="text/css">
+                td { line-height: 20px; }
+            </style>
+            <h1> 模板管理 </h1>
+            <div class="bloc">
+                <div class="title"> 模板列表 <a href="/api/comquery/tpladd" title="添加模板"><img src="img/icons/actions/edit.png" alt="" />添加模板</a></div>
+                <div class="content">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> 模板名称 </th>
+                                <th> 操作 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {=foreach from=$tpllist item="list"=}
+                            <tr>
+                                <td> {=$list['tid']=} </td>
+                                <td>{=$list['tname']=}</td>
+                                <td class="actions" style="width: 150px">
+                                    <a href="/api/comquery/fieldslist?tplid={=$list['tid']=}" title="设计">域设计</a>
+                                    <a href="/api/comquery/tpledit?tplid={=$list['tid']=}" title="模板编辑">模板编辑</a>
+                                </td>
+                            </tr>
+                            {=/foreach=}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

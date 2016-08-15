@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* ---------- 全局公用样式 begin ---------- */
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+address,caption,cite,code,dfn,em,strong,th,var,i{font-style:normal;font-weight:normal}
+code,kbd,samp,tt{font-size:100%}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+:link,:visited{text-decoration:none}
+abbr,acronym{border:0;font-variant:normal}
+sup{font-size:100%;vertical-align:text-top}
+sub{font-size:100%;vertical-align:text-bottom}
+img{border:0 none;}
+a{color:#333333;text-decoration:none;}
+a:visited{color:#333333;text-decoration:none;}
+a:hover{color:#FF6600;text-decoration:underline;}
+/*clearfix*/
+.clearfix:after, .section:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix, .section{zoom:1;}
+
+
+/* 常用链接 begin */
+.gray, a.gray:link, a.gray:visited{color:#888888!important;}/* 灰色 */
+a.gray:hover{color:#FF6600!important;}
+.yellow, a.yellow:link, a.yellow:visited{color:#FF6600!important;}/* 黄色 */
+.blue, a.blue:link, a.blue:visited{color:#4EA7E9!important;}/* 蓝色 */
+a.blue:hover{color:#FF6600!important;}
+.bold, a.bold{font-weight:bold;}
+/* 常用链接 end */
+#wrapper{width:960px;text-align:left;margin:0 auto;}
+#topWrap{zoom:1;text-align: center;}
+#headBox{width:960px;margin:0 auto;}
+/* 广告位 */
+.postwrap{width:960px;overflow:hidden;margin-bottom:10px;zoom:1;}
+/* ---------- 全局公用样式 end ---------- */
+body{ font-size:12px; font-family:"宋体"; color:#333333; background:#ffffff}
+/* 通用部分 */
+.fl{float:left}
+.fr{float:right}
+.mt5{margin-top:5px;}
+.mt8{margin-top:8px;}
+.mt10{ margin-top:10px}
+.mt15{ margin-top:15px}
+.mt20{ margin-top:20px}
+.mr10{ margin-right:10px}
+.mb10{ margin-bottom:10px}
+.ml10{margin-left:10px}
+.author{float:right;padding-right:5px;font-size:12px;}
+.datetime{font-size:0.85em;color:#999;padding-left:5px;line-height:1.6em;}
+
+/* ---------- 横切样式 begin ---------- */
+/* p_c1_01 695_255 */
+.p_c1_01{margin-bottom:10px;}
+.p_c1_01 .p_w{width:100%; position:relative;}
+
+/* p_c2_01 695_255 */
+.p_c2_01{margin-bottom:10px;}
+.p_c2_01 .p_l{width:695px;float:left;}
+.p_c2_01 .p_r{width:255px;float:right;}
+
+/* p_c2_02 255_695 */
+.p_c2_02{margin-bottom:10px;}
+.p_c2_02 .p_l{width:255px;float:left;}
+.p_c2_02 .p_r{width:695px;float:right;}
+
+/* p_c2_03 570_380 */
+.p_c2_03{margin-bottom:10px;}
+.p_c2_03 .p_l{width:570px;float:left;}
+.p_c2_03 .p_r{width:380px;float:right;}
+
+/* p_c2_04 380_570 */
+.p_c2_04{margin-bottom:10px;}
+.p_c2_04 .p_l{width:380px;float:left;}
+.p_c2_04 .p_r{width:570px;float:right;}
+
+/* p_c3_01 255_430_255 */
+.p_c3_01{margin-bottom:10px;}
+.p_c3_01 .p_l{width:255px;float:left;}
+.p_c3_01 .p_m{width:430px;float:left;margin-left:10px;}
+.p_c3_01 .p_r{width:255px;float:right;}
+
+/* p_c3_02 313_314_313 */
+.p_c3_02{margin-bottom:10px;}
+.p_c3_02 .p_l{width:313px;float:left;}
+.p_c3_02 .p_m{width:314px;float:left;margin-left:10px;}
+.p_c3_02 .p_r{width:313px;float:right;}
+
+/* ---------- 横切样式 end ---------- */
+
+/* ---------- 内容样式 begin ---------- */
+
+.c_wrap{position:relative;}
+.c_inner{background-color:#ffffff; border:1px solid #dddddd;}
+.c_t_box{padding:15px;}
+.c_t_box:after, .c_p_l:after, .c_t_l:after, .c_m_b:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.c_t_box, .c_p_l, .c_t_l, .c_m_b{zoom:1}
+
+/* 头条 */
+.c_t_h h3{height:22px; text-align:center; font-size:18px; overflow:hidden}
+.c_t_h h3 a, .c_t_h h3 a:visited{color:#eb6100;}
+.c_t_h p{color:#333333; text-indent:24px; line-height:24px;}
+
+/*16px标题*/
+.title{background:url(../images/pages/ctitlebg.jpg) repeat-x;}
+.title  h3{height:38px; padding-left:12px; font-weight:bold; line-height:38px; border-bottom:1px solid #dddddd}
+.title .c_name{float:left; font-family:微软雅黑; font-size:16px; margin-right:6px;}
+.title .c_name a{color:#ff7100;}
+.title .c_more{float:right; height:38px; font-size:12px; padding-right:10px;}
+
+/*列表字段*/
+.col_num, .col_cata, .col_author, .col_word, .col_update, .col_click, .col_opt, .col_done{text-align:center;}
+.col_num{width:60px;}
+.col_cata, .col_author, .col_word, .col_update, .col_click, .col_opt{width:70px; }
+.col_bname{padding-left:5px; width:140px;}
+.col_author, .col_done{width:100px; }
+
+/* 图片列表 */
+.c_p_l li{float:left; width:19.98%; text-align:center}
+.c_p_l li .b_name, .c_p_l li .b_info{margin:0 auto; width:110px; height:20px; line-height:20px; word-wrap:break-word; word-break:break-all; overflow:hidden}
+.c_p_l li .b_name{padding-top:8px;}
+.c_p_l li .b_info{color:#888888}
+.c_p_l li img{width:110px; height:158px; display:block; margin:0 auto}
+.c_t_l{margin-top:4px; border-top:1px solid #dddddd;}
+.c_t_l li{float:left; width:49.98%; height:24px; line-height:24px; word-wrap:break-word; word-break:break-all; color:#888888;}
+
+/* 图文混排 */
+.c_m_m{}
+.c_m_b .pic{width:112px;}
+.c_m_b .info{padding-left:15px; _padding-left:127px; overflow:hidden}
+
+/* 头条+列表 */
+.k_m_t_01 ul{padding-top:10px;}
+.k_m_t_01 ul li{width:50%; float:left;}
+.k_m_t_01 ul li span{display:block; height:24px; line-height:24px; cursor:pointer; vertical-align:middle; word-wrap:break-word; word-break:break-all; overflow:hidden}
+.k_m_t_01 ul li span.bcata, .k_m_t_01 ul li span.bname{float:left;}
+.k_m_t_01 ul li span.bname{width:178px;}
+.k_m_t_01 ul li span.bcata{padding-right:6px;}
+.k_m_t_01 ul li span.author{float:right; padding-right:5px; width:54px;}
+
+/*带标题图片列表*/
+.k_m_p_01{}
+.k_m_p_01 .title  h3{border-left:5px solid #ff7100;}
+.k_m_p_01 ul li{float:left; width:19.98%; text-align:center}
+.k_m_p_01 ul li .b_name, .k_m_p_01 ul li .b_info{margin:0 auto; width:110px; height:20px; line-height:20px; word-wrap:break-word; word-break:break-all; overflow:hidden}
+.k_m_p_01 ul li .b_info{color:#888888}
+.k_m_p_01 ul li img{width:110px; height:158px; display:block; margin:0 auto}
+
+/*带标题文字列表一*/
+.k_m_f_01{}
+.k_m_f_01 .c_t_box{padding:0 12px;}
+.k_m_f_01 ul{padding-top:3px;}
+.k_m_f_01 li{height:26px; line-height:26px;}
+.k_m_f_01 li span, .k_m_f_01 li i{display:block}
+.k_m_f_01 li span{height:26px; word-wrap:break-word; word-break:break-all; vertical-align:middle; overflow:hidden}
+.k_m_f_01 li i{float:left}
+.k_m_f_01 li .b_name{float:left; width:150px}
+.k_m_f_01 li .b_info{float:right; width:60px; text-align:right}
+.k_m_f_01 li .b_info, .k_m_f_01 li .b_info a{color:#888888}
+.k_m_f_01 li .b_info a:hover{color:#FF6600}
+
+/*带标题文字列表二*/
+.k_m_f_02{}
+.k_m_f_02 .c_t_box{padding:0 12px;}
+.k_m_f_02 ol{padding-top:3px;}
+.k_m_f_02 li{height:26px; line-height:26px;}
+.k_m_f_02 li span, .k_m_f_02 ol li i{display:block}
+.k_m_f_02 li i{float:left; margin-top:6px; margin-right:5px; width:14px; height:14px; line-height:14px; text-align:center; font-size:12px; color:#555555; background-color:#EEEEEE;}
+.k_m_f_02 li.first i, .k_m_f_02 li.second i, .k_m_f_02 li.third i{color:#FFFFFF; background-color:#eb6100}
+.k_m_f_02 li span{height:26px; word-wrap:break-word; word-break:break-all; vertical-align:middle; overflow:hidden}
+.k_m_f_02 li .b_name{float:left; }
+.k_m_f_02 li .b_info{float:right; width:60px; text-align:right}
+.k_m_f_02 li .b_info, .k_m_f_02 li .b_info a{color:#888888}
+.k_m_f_02 li .b_info a:hover{color:#FF6600}
+
+/*带标题文字列表三*/
+.k_m_f_03{}
+.k_m_f_03 .title  h3{border-left:5px solid #ff7100;}
+.k_m_f_03 .c_t_box{padding:0;}
+.k_m_f_03 thead td{height:32px; font-weight:bold; color:#000000; background-color:#f9f9f9;}
+.k_m_f_03 tbody td{height:31px; line-height:31px; color:#333333; border-top:1px solid #eeeeee;}
+.k_m_f_03 tbody td .col_click, .k_m_f_03 tbody td .col_done, .k_m_f_03 tbody td .col_opt{color:#888888;}
+
+/*带标题图文混排一*/
+.k_m_m_01{}
+.k_m_m_01 .title  h3{border-left:5px solid #ff7100;}
+.k_m_m_01 .c_t_box{padding:8px 10px 0 10px;}
+.k_m_m_01 .c_p_l li .b_name{padding-top:4px;}
+
+/*带标题图文混排二*/
+.k_m_m_02 .c_t_box{padding:10px}
+.k_m_m_02 .c_p_l img{width:98px; height:140px;}
+.k_m_m_02 .c_p_l li{float:left; width:33%; text-align:center}
+.k_m_m_02 .c_m_m .info{width:380px}
+
+/*带标题图文混排三*/
+.k_m_m_03 .c_t_box{padding:20px}
+.k_m_m_03 .c_p_l img{width:110px; height:160px;}
+.k_m_m_03 .c_p_l li{float:left; width:33%; text-align:center}
+.k_m_m_03 .c_m_m .info{width:380px}
+
+/* --------- 内容样式 end --------- */
+
+.footer{margin:20px auto 0;width:960px;text-align:center;line-height:28px;border-top:1px solid #ddd; }
+

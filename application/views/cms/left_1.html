@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{=$baseurl=}">
+        <title>{=$title=}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/min.js"></script>
+        <script type="text/javascript" src="/js/jquery.json.min.js"></script>
+
+        <script type="text/javascript" src="/css/settings/main.js"></script>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+        
+    </head>
+    <body>
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <ul>
+        {=if is_array($all_act_arr)=}
+        {=foreach from=$all_act_arr item="act"=}
+        {=if $act['display'] neq 'no'=}
+        <li><a href="{=$act['target']=}"><img src="img/icons/menu/{=$act['icon']=}" /> {=$act['title']=} </a>
+            {=if is_array($act['subact'])=}
+            <ul>
+                {=foreach from=$act['subact'] item="subact"=}
+                {=if $subact['display'] eq 'yes'=}
+                <li><a href="{=$subact['target']=}" target="mainframe"> {=$subact['title']=} </a></li>
+                {=/if=}
+                {=/foreach=}
+            </ul>                    
+            {=/if=}
+        </li>
+        {=/if=}
+        {=/foreach=}
+        {=/if=}
+
+    </ul>
+    <a href="#collapse" id="menucollapse">&#9664; 折叠</a>
+</div>
+    </body>
+</html>

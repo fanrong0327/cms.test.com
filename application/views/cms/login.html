@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{=$baseurl=}">
+        <title>草木乐动阅读运营平台</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/min.js"></script>
+		<script>
+            $(function(){
+                $(".placeholder input").bind('click',function(){
+                    $(this).siblings().css("display","none");
+                });
+                $(".placeholder input").keyup(function(event){
+                    var key = event.keyCode;
+                    if(key == 9){
+                        $(this).siblings().css("display","none");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="content" class="login">
+
+            <h1><img src="/img/icons/lock-closed.png" alt="" />草木乐动阅读运营平台</h1>
+            <form action="account/login" method="post">
+
+                <div class="input placeholder">
+                    <label for="login">用户名</label>
+                    <input type="text" name='username' id="login"/>
+                </div>
+                <div class="input placeholder">
+                    <label for="pass">密码</label>
+                    <input type="password" name='password' id="pass" value=""/>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="remember"/>
+                    <label class="inline" for="remember">记住我</label>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="登录"/>
+                </div>
+            </form>
+            <div style="color: red; margin-top: 50px;font-size: 15px">注：请用公司邮箱前缀与公司邮箱密码登陆</div>
+
+        </div>
+
+    </body>
+</html>
+

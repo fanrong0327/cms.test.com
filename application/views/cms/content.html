@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{=$baseurl=}">
+        <title>{=$data['title']=}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        {=if  isset($data['subtitle']) && $data['subtitle'] neq '内容列表'=}
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script> 
+        <script type="text/javascript" src="/js/min.js"></script>
+        {=/if=}
+        <script type="text/javascript" src="/js/jquery.json.min.js"></script>
+        <!-- 专题需要的 -->
+        <link href="/js/artDialog/skins/idialog.css" rel="stylesheet" />
+
+    </head>
+    <body>
+
+        <script type="text/javascript" src="/css/settings/main.js"></script>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+
+        <!-- CONTENT --> 
+        <div id="content" class="white">
+            {=$content nofilter=}
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    $('li[class="current"]').parent().parent().addClass('current');
+
+    for (i = 0; i < $('#sidebar ul').length; i++) {
+        if (!$($('#sidebar ul')[i]).html()) {
+            $($('#sidebar ul')[i]).remove();
+        }
+    }
+</script>

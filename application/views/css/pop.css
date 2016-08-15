@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/* 弹出层样式 */
+.popWin{zoom:1;}
+.popTitle{height:40px; line-height:40px; padding-left:15px; background-color:#EEEEEE;  font-family:"Microsoft YaHei UI"; font-size:20px; font-weight:bold;}
+.popTitle span{font-size:14px; color:red}
+.popCont{padding:10px 15px; border-top:none;zoom:1;overflow:hidden;}
+
+/*风格列表*/
+#NewStyle{position:;width:900px;display:none;z-index:10001;background:#fff;text-align:left;}
+.NewStyle{zoom:1;overflow:auto;padding:10px 0 0;}
+.NewStyle .style{width:210px;float:left;text-align:center;height:210px;}
+.NewStyle .style img{}
+.NewStyle .style p{line-height:18px;text-align:left;padding-left:40px;color:#333;}
+
+/* 添加横切 */
+#NewSection{display:none;z-index:10001;background:#fff;text-align:left;}
+#SectionList{width:980px; zoom:1; position:relative; overflow-x:hidden; overflow-y:auto;}
+#SectionList ul{ max-height:400px; _height:400px; }
+#SectionList li{ height:100px; margin-bottom:10px; background:url(../images/mod_ratio.png) no-repeat;}
+#SectionList li.p_c1_01{background-position:0 0;}
+#SectionList li.p_c2_01{background-position:0 -110px;}
+#SectionList li.p_c2_02{background-position:0 -220px;}
+#SectionList li.p_c2_03{background-position:0 -330px;}
+#SectionList li.p_c2_04{background-position:0 -440px;}
+#SectionList li.p_c3_01{background-position:0 -550px;}
+#SectionList li.p_c3_02{background-position:0 -660px;}
+#SectionList li a{width:100%;display:block; height:100px; transition: all 0.5s ease 0s;}
+#SectionList li a:hover{background-color:#000000; opacity:0.5; filter:alpha(opacity=50)}
+
+.btnblock{margin-top:10px; padding:10px 0; background-color:#ffffff; border:1px dashed #000000; text-align:center;}
+.btnblock input{height:30px; line-height:30px; padding:0 20px;}
+
+/* 添加模块 */
+#NewBlock{display:none;z-index:10001;background:#fff;text-align:left;}
+#NewBlockList{zoom:1; width:750px; overflow-x:hidden; overflow-y:auto; position:relative;}
+#NewBlockList ul{ max-height:500px; _height:500px; }
+#NewBlockList li{ margin-top:15px; padding-bottom:10px; border-bottom:1px dashed #dddddd;}
+#NewBlockList li h3{font-size:14px; font-weight:bold;}
+#NewBlockList li p{text-align:center;padding:10px 0;}
+#NewBlockList li img{border:2px solid #999999;transition: all 0.5s ease 0s;}
+#NewBlockList li a:hover img{/*border-color:#eb6100;*/ box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.85);}
+
+.blockTool{display:none; width:16px; padding:5px 4px; border:1px dashed red; border-left:1px solid #ffffff; background-color:#ffffff; /*box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.85);*/ position:absolute;  z-index:100; right:-25px; top:0;}
+.blockTool.left{border-left:1px dashed red; border-right:1px solid #ffffff; left:-25px;}
+.blockTool span, .sectionTool span{float:left; display:block; width:16px; height:16px; text-indent:-999em; background: url(../images/icon_tools.png) no-repeat; cursor:pointer}
+.blockTool .icon_del, .sectionTool .icon_del{background-position:0 0;}
+.blockTool .icon_up{margin-top:5px; background-position:0 -24px;}
+.blockTool .icon_down{margin-top:8px;background-position:0 -49px;}
+.blockTool .icon_add{margin-top:8px;background-position:0 -75px;}
+.blockTool .icon_del:hover, .sectionTool .icon_del:hover{background-position:-18px 0;}
+.blockTool .icon_up:hover{margin-top:5px; background-position:-18px -24px;}
+.blockTool .icon_down:hover{margin-top:8px;background-position:-18px -49px;}
+.blockTool .icon_add:hover{margin-top:8px;background-position:-18px -75px;}
+
+.sectionTool{display:none; width:16px; padding:5px 4px;  background-color:#f9f9f9; position:absolute; z-index:100; left:-24px; top:-1px; border:1px solid #4EA7E9; box-shadow:-1px 0 3px #4EA7E9}
+
+.edit_head{height:50px;}
+.edit_head h3{line-height:50px; color:#333333; font-family:"微软雅黑"; font-size:22px;}
+.edit_head .head_link{display:block; margin-top:22px; vertical-align:middle; margin-left:10px;}
+.edit_head .head_link a{color:#333333;}
+.edit_head .head_link a:hover{color:#eb6100;}
+.edit_bar{margin-left:20px; margin-top:15px;}
+.edit_bar span{display:inline-block; margin-right:10px; cursor:pointer;}
+.edit_bar input{paddkking:0 10px; font-size:12px; font-weight:bold; height:26px; line-height:26px; color:#4EA7E9}
+.edit_content{min-height:540px; min-width:960px; padding:10px; border:1px solid #d1d0d0; background-color:#ffffff;}
+.edit_tmpl{width:960px; margin:0 auto;}
+
+#content .edit_head .edit_bar input, #tmplcontainer .section .btnblock input{ width:auto; padding:0 15px; display:inline-block; box-shadow: 2px 1px 5px #CBC9C9 outset;}
+#tmplcontainer .section .blockTool.left{border-left:1px dashed red; border-right:1px solid #ffffff; left:-25px; width:16px;}
+#tmplcontainer .section .c_wrap a{color:#333333;text-decoration:none;}
+#tmplcontainer .section .c_wrap a:visited{color:#333333;text-decoration:none;}
+#tmplcontainer .section .c_wrap a:hover{color:#FF6600;text-decoration:underline;}
+#tmplcontainer .section .c_wrap ul, #tmplcontainer .section .c_wrap ol{list-style:none; padding:0; margin:0}
+
+#tmplcontainer .section .c_wrap .k_m_t_01 ul{padding-top:10px;}
+#tmplcontainer .section .c_wrap .k_m_f_01 ul{padding-top:3px;}
+#tmplcontainer .section .c_wrap .k_m_f_02 ol{padding-top:3px;}
+#tmplcontainer .section .c_wrap .title{background:url(../images/pages/ctitlebg.jpg) repeat-x;line-height:38px;height:38px;padding:0}
+#tmplcontainer .section .c_wrap .title  h3{height:38px; padding:0 0 0 12px; font-weight:bold; line-height:38px; border-bottom:1px solid #dddddd}
+#tmplcontainer .section .c_wrap .title span{line-height:38px;}
+#tmplcontainer .section .c_wrap .title .c_name a{color:#ff7100;}
+#tmplcontainer .section .c_wrap .c_t_h h3{height:22px; text-align:center; font-size:18px; padding:0; overflow:hidden}
+#tmplcontainer .section .c_wrap .c_t_h h3 a, #tmplcontainer .section .c_wrap .c_t_h h3 a:visited{color:#eb6100;}
+
+#tmplcontainer .section .c_wrap p{padding:0;}
+#tmplcontainer .section .c_wrap .c_t_h p{color:#333333; text-indent:24px; line-height:24px; padding:0}
+#tmplcontainer .section .c_wrap .c_p_l .b_name{padding-top:8px;}
+#tmplcontainer .section .c_wrap .k_m_m_01 .c_p_l .b_name{padding-top:4px;}
+#tmplcontainer .edit_head .edit_bar span input{ font-size:12px; font-weight:bold; height:26px; line-height:26px; color:#4EA7E9}
+#tmplcontainer .section .btnblock input{ height:30px; line-height:30px; padding:0 20px;}
+
+#tmplcontainer .section{transition: all 0.5s ease 0s; position:relative; border:1px solid #ffffff }
+#tmplcontainer .section.activited{ background-color:#f9f9f9; border:1px solid #4EA7E9; box-shadow:0 0 3px #4EA7E9}
+#tmplcontainer .c_wrap{position:relative;}
+#tmplcontainer .c_inner{ transition: all 0.5s ease 0s;}
+#tmplcontainer .c_wrap.activited .c_inner{border:1px dashed red; box-shadow:1px 1px 1px #999999}
+
+
+
+
+
+
+

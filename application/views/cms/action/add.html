@@ -1,0 +1,59 @@
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} </div>
+    <div class="content">
+        <form action="" method="post">
+            <div class="input">
+                <label for="input1">操作名称</label>
+                <input type="text" name="title" value="{=$data['act']['title']=}"> <br>
+            </div>
+
+            <div class="input">
+                <label for="input1">icon图标</label>
+                {=foreach from=$icon_arr key="key" item="icon"=}
+                <input name="icon" type="radio" value="{=$icon=}" {=if $data['act']['icon'] eq $icon=}checked{=/if=}> 
+                <img src="img/icons/menu/dark/{=$icon=}" style="margin-right:20px;">
+                {=if ($key+1)%5 eq 0=}<br/>{=/if=}
+                {=/foreach=}
+            </div>
+
+            <div class="input">
+                <label for="input1">链接地址</label>
+                <input type="text" name="target" value="{=$data['act']['target']=}"> <br>
+            </div>
+
+            <div class="input">
+                <label for="input1">验证字符</label>
+                <input type="text" name="verify" value="{=$data['act']['verify']=}"> <br>
+            </div>
+
+            <div class="input">
+                <label for="input1">父级操作</label>
+                <select name="pid">
+                    <option value="0"> 顶级操作 </option>
+                    {=foreach from=$data['top_act'] item="val"=}
+                    {=if $val['id'] neq $data['act']['id']=}
+                    <option value="{=$val['id']=}" {=if $val['id'] eq $data['act']['pid']=} selected {=/if=}> {=$val['title']=} </option>
+                    {=/if=}
+                    {=/foreach=}
+
+                </select>
+            </div>
+
+            <div class="input">
+                <label for="input1">是否显示</label>
+                <input type="radio" name="display" value="yes" {=if $data['act']['display'] eq 'yes'=} checked {=/if=}> YES &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="display" value="no" {=if $data['act']['display'] eq 'no'=} checked {=/if=}> NO
+            </div>
+
+            <div class="input">
+                <label for="input1">排序</label>
+                <input type="text" name="orderby" value="{=$data['act']['orderby']=}"> <br>
+            </div>
+
+            <div class="submit clear">
+                <input type="submit" name="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+        <!-- CONTENT --> 
+        <div id="content" class="white">
+            <h1> 域管理 </h1>
+            <div class="bloc">
+                <div class="title"> 修改域 </div>
+                <div class="content">
+                    <form action="" method="post">
+                        <div class="input">
+                            <label for="input1">使用字段名称</label>
+                            <input type="text" name="realname" value="{=if isset($data['realname'])=}{=$data['realname']=}{=/if=}"> <br>
+                        </div>
+                        <div class="input">
+                            <label for="input1">封装字段名称</label>
+                            <input type="text" name="name" value="{=if isset($data['name'])=}{=$data['name']=}{=/if=}"> <br>
+                        </div>
+                        <div class="input">
+                            <label for="input1">说明</label>
+                            <input type="text" name="cname" value="{=if isset($data['cname'])=}{=$data['cname']=}{=/if=}"> <br>
+                        </div>
+                        <div class="input">
+                            <label for="input1">注释</label>
+                            <input type="text" name="mem" value="{=if isset($data['mem'])=}{=$data['mem']=}{=/if=}"> <br>
+                        </div>
+
+                        <div class="submit clear">
+                            <input type="hidden" name="tplid" value="{=if isset($tplid)=}{=$tplid=}{=/if=}"/>
+                            <input type="hidden" name="fid" value="{=if isset($fid)=}{=$fid=}{=/if=}"/>
+                            <input type="submit" name="submit" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+

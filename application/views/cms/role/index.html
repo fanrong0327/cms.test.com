@@ -1,0 +1,53 @@
+<style type="text/css">
+td { line-height: 20px; }
+table{
+	table-layput:fixed;
+	word-wrap:break-wrod;
+	word-break:break-all; 
+}
+</style>
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=$data['subtitle']=} <a href="role/add" title="添加角色"><img src="img/icons/actions/edit.png" alt="" />添加角色</a></div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th > ID </th>
+                    <th > 用户名 </th>
+                    <th > 真实名称 </th>
+                    <th > 操作 </th>
+                </tr>
+            </thead>
+            <tbody>
+		{=if is_array($data['lists'])=}
+                {=foreach from=$data['lists'] item="val"=}
+		    <tr>
+                    <td> {=$val['id']=} </td>
+                    <td> {=$val['username']=} </td>
+                    <td> {=$val['name']=} </td>
+                    <td class="actions"><a href="role/edit/{=$val['id']=}" title="编辑"><img src="img/icons/actions/edit.png" /></a>
+                        <a href="role/delete/{=$val['id']=}" title="删除" onclick="return confirm('确认删除？');"><img src="img/icons/actions/delete.png" ></a></td>
+                    </tr>
+		{=/foreach=}
+                {=/if=}
+            </tbody>
+        </table>
+        <div class="left input">
+            <!--select name="action" id="tableaction">
+                <option value="">Action</option>
+                <option value="delete">Delete</option>
+            </select-->
+        </div>
+        <!--<div class="pagination">
+            <a href="#" class="prev">«</a>
+            <a href="#">1</a>
+            <a href="#" class="current">2</a>
+            ...
+            <a href="#">21</a>
+            <a href="#">22</a>
+            <a href="#" class="next">»</a>
+        </div>-->
+    </div>
+</div>
+

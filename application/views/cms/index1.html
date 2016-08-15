@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{=$baseurl=}">
+        <title>{=$title=}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+
+        <!-- jQuery AND jQueryUI -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/min.js"></script>
+        <script type="text/javascript" src="/js/jquery.json.min.js"></script>
+
+    </head>
+    <body>
+
+        <script type="text/javascript" src="/css/settings/main.js"></script>
+        <link rel="stylesheet" href="/css/settings/style.css" />
+        <!--              
+                HEAD
+        --> 
+        <div id="head">
+            <div class="left">
+                <a href="javascript:;" class="button profile"><img src="img/icons/top/huser.png" alt="" /></a>
+                欢迎, 
+                <a href="javascript:;">管理员</a>
+                |
+                <a href="account/logout">退出</a>
+            </div>
+            <div class="right">
+                <!--
+                <form action="#" id="search" class="search placeholder">
+                    <label>Looking for something ?</label>
+                    <input type="text" value="" name="q" class="text"/>
+                    <input type="submit" value="rechercher" class="submit"/>
+                </form>
+                -->
+            </div>
+        </div>
+
+
+        <!-- SIDEBAR --> 
+        <div id="sidebar">
+            <ul>
+                {=if is_array($all_act_arr)=}
+                {=foreach from=$all_act_arr item="act"=}
+                {=if $act['display'] neq 'no'=}
+                <li><a href="{=$act['target']=}"><img src="img/icons/menu/{=$act['icon']=}" /> {=$act['title']=} </a>
+                    {=if is_array($act['subact'])=}
+                    <ul>
+                        {=foreach from=$act['subact'] item="subact"=}
+                        {=if $subact['display'] eq 'yes'=}
+                        <li><a href="{=$subact['target']=}"> {=$subact['title']=} </a></li>
+                        {=/if=}
+                        {=/foreach=}
+                    </ul>                    
+                    {=/if=}
+                </li>
+                {=/if=}
+                {=/foreach=}
+                {=/if=}
+
+            </ul>
+            <a href="#collapse" id="menucollapse">&#9664; 折叠</a>
+        </div>
+
+        <!-- CONTENT --> 
+        <div id="content" class="white">
+            {=$content nofilter=}
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    $('li[class="current"]').parent().parent().addClass('current');
+
+    for (i = 0; i < $('#sidebar ul').length; i++) {
+        if (!$($('#sidebar ul')[i]).html()) {
+            $($('#sidebar ul')[i]).remove();
+        }
+    }
+</script>

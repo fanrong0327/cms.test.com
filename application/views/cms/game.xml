@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basedata>
+<const>
+<item  id="DAILY_REWARD_GOLD" value="300" />
+<item  id="GEM_NORMAL_AGGRESSION" value="50" />
+<item  id="GEM_EXPLOSIVE_AGGRESSION" value="100" />
+<item  id="GEM_ROW_COLUMN_REMOVE_AGGRESSION" value="150" />
+<item  id="GEM_HYPERCUBE_AGGRESSION" value="200" />
+<item  id="GEM_EXPLOSIVE_COMPOSE" value="100" />
+<item  id="GEM_ROW_COLUMN_REMOVE_COMPOSE" value="150" />
+<item  id="GEM_HYPERCUBE_COMPOSE" value="200" />
+<item  id="GEM_NORMAL_ATK_NUM" value="1" />
+<item  id="GEM_EXPLOSIVE_ATK_NUM" value="4" />
+<item  id="GEM_ROW_COLUMN_REMOVE_ATK_NUM" value="4" />
+<item  id="GEM_HYPERCUBE_ATK_NUM" value="6" />
+<item  id="GEM_POWER_PARAMETER" value="2" />
+</const>
+<map>
+<item  id="1" name="死亡矿井" tex="map_1.png" copy_count="25" copy_tex="UI/copy_scene_bg.png" />
+<item  id="2" name="血色大教堂" tex="map_2.png" copy_count="24" copy_tex="copy_scene_bg.png"/>
+</map>
+<copy>
+{=if is_array($data['copy_array'])=}
+   {=foreach from=$data['copy_array'] item="val"=}
+   <item  id="{=$val['field_1']=}" map_id="{=$val['field_2']=}" name="{=$val['field_3']=}" desp="{=$val['field_4']=}" 
+   tex="{=$val['field_5']=}" wave_count="{=$val['field_6']=}" monster_count="{=$val['field_7']=}" time="{=$val['field_8']=}" 
+   gem_num="{=$val['field_9']=}" hp="{=$val['field_10']=}" one_star_sec="{=$val['field_11']=}" 
+   two_star_sec="{=$val['field_12']=}" three_star_sec="{=$val['field_13']=}" one_star_hp="{=$val['field_14']=}" 
+   two_star_hp="{=$val['field_15']=}" three_star_hp="{=$val['field_16']=}" prev_id="{=$val['field_17']=}" x="{=$val['field_18']=}" 
+   y="{=$val['field_19']=}" hero0="{=$val['field_20']=}" hero1="{=$val['field_21']=}" hero2="{=$val['field_22']=}" 
+   hero3="{=$val['field_23']=}" hero4="{=$val['field_24']=}" infinite="{=$val['field_25']=}"/>
+   {=/foreach=}
+  {=/if=}
+</copy>   
+<monster>    
+{=if is_array($data['monster_array'])=}
+   {=foreach from=$data['monster_array'] item="val"=}
+   <item  id="{=$val['field_1']=}" name="{=$val['field_2']=}" tex1="{=$val['field_3']=}" tex2="{=$val['field_4']=}"
+    tex3="{=$val['field_5']=}" atk_tex1="{=$val['field_6']=}" atk_tex2="{=$val['field_7']=}" atk_tex3="{=$val['field_8']=}" 
+    rest_tex1="{=$val['field_9']=}" rest_tex2="{=$val['field_10']=}" be_atked_tex1="{=$val['field_11']=}" hp="{=$val['field_12']=}"
+     aggression="{=$val['field_13']=}" weight="{=$val['field_14']=}" speed="{=$val['field_15']=}" interval="{=$val['field_16']=}" 
+     priority="{=$val['field_17']=}" atk_pos="{=$val['field_18']=}"  bones_png="{=$val['field_19']=}" bones_plist="{=$val['field_20']=}"
+    bones_json="{=$val['field_21']=}"  bones_name="{=$val['field_22']=}"/>
+   {=/foreach=}
+{=/if=}
+</monster>
+<wavemonster>
+{=if is_array($data['wavemonster_array'])=}
+   {=foreach from=$data['wavemonster_array'] item="val"=}
+   <item  id="{=$val['field_1']=}" wave_id="{=$val['field_2']=}" monster_id="{=$val['field_3']=}" row_index="{=$val['field_4']=}" />
+   {=/foreach=}
+{=/if=}
+</wavemonster>
+<copywave>
+{=if is_array($data['copywave_array'])=}
+   {=foreach from=$data['copywave_array'] item="val"=}
+   <item  id="{=$val['field_1']=}" copy_id="{=$val['field_2']=}" copy_wave_index="{=$val['field_3']=}" copy_wave_time="{=$val['field_4']=}" />
+   {=/foreach=}
+{=/if=}
+</copywave>
+
+<spriteskill>
+<item  id="1" name="火球" desp="击中怪物造成伤害 并且造成持续伤害" consume="120" cool_time="10" group="1" action_type="1" power="100" tex1="skill_fire_ball.png" tex2="skill_fire_ball.png" />
+<item  id="2" name="火墙" desp="击中怪物造成伤害 并且造成持续伤害" consume="60" cool_time="20" action_type="3" power="50" status1="1" tex1="skill_fire_wall.png" tex2="skill_fire_wall.png" />
+<item  id="3" name="陨石" desp="击晕　伤害　持续伤害" consume="15" cool_time="30" group="1" action_type="1" power="50" status1="1" status2="2" tex1="skill_meteorolite.png" tex2="skill_meteorolite.png" />
+<item  id="4" name="金柠檬" desp="击晕" consume="10" cool_time="10" action_type="4" status1="2" tex1="skill_meteorolite.png" tex2="skill_meteorolite.png" />
+<item  id="5" name="大金柠檬" desp="击晕好久" consume="15" cool_time="15" action_type="4" status1="3" tex1="skill_meteorolite.png" tex2="skill_meteorolite.png" />
+<item  id="6" name="盾" desp="释放盾，来减免怪物伤害" consume="60" cool_time="10" action_type="6" status1="9" tex1="skill_defence.png" tex2="skill_defence.png" />
+<item  id="7" name="大盾" desp="释放盾，来减免怪物伤害" consume="10" cool_time="15" action_type="5" status1="10" tex1="skill_defence.png" tex2="skill_defence.png" />
+<item  id="8" name="刺盾" desp="释放盾，来减免怪物伤害、且定时攻击怪物" consume="15" cool_time="15" action_type="6" status1="10" status2="1" tex1="skill_defence.png" tex2="skill_defence.png" />
+<item  id="9" name="回复" desp="回血500" consume="180" cool_time="20" action_type="7" recovery="1000" tex1="skill_recovery.png" tex2="skill_recovery.png" />
+<item  id="10" name="大回复" desp="加血200" consume="15" cool_time="30" action_type="7" recovery="200" tex1="skill_recovery.png" tex2="skill_recovery.png" />
+<item  id="11" name="扰乱" desp="回头５秒" consume="16" cool_time="30" action_type="8" status1="4" tex1="skill_recovery.png" tex2="skill_recovery.png" />
+<item  id="12" name="混乱" desp="混乱攻击５秒" consume="17" cool_time="30" action_type="9" status1="5" tex1="skill_recovery.png" tex2="skill_recovery.png" />
+<item  id="14" name="迷乱" desp="变成我方" consume="18" cool_time="30" action_type="9" status1="6" tex1="skill_recovery.png" tex2="skill_recovery.png" />
+<item  id="15" name="冰" desp="经过减速" consume="60" cool_time="5" group="1" action_type="10" status1="11" tex1="skill_ice.png" tex2="skill_ice.png" />
+<item  id="16" name="刺冰" desp="减速并且受伤" consume="20" cool_time="30" action_type="11" status1="11" status2="1" tex1="skill_atk_ice.png" tex2="skill_atk_ice.png" />
+<item  id="17" name="兴奋" desp="增加攻击力" consume="10" cool_time="20" action_type="12" status1="7" />
+<item  id="18" name="大兴奋" desp="增加攻击力" consume="15" cool_time="20" action_type="12" status1="8" />
+{=if is_array($data['spriteskill_array'])=}
+   {=foreach from=$data['spriteskill_array'] item="val"=}
+   <item  id="{=$val['field_1']=}" name="{=$val['field_2']=}" desp="{=$val['field_3']=}" consume="{=$val['field_4']=}" 
+   cool_time="{=$val['field_5']=}" group="{=$val['field_6']=}" action_type="{=$val['field_7']=}" status1="{=$val['field_8']=}" 
+   tex1="{=$val['field_9']=}" tex2="{=$val['field_10']=}" bufftype="{=$val['field_11']=}" round="{=$val['field_12']=}" 
+   buffvalue="{=$val['field_13']=}"/>
+   {=/foreach=}
+{=/if=}
+</spriteskill>
+<spriteskillstatus>
+<item  id="1" type="1" />
+<item  id="2" type="2" param1="10" />
+<item  id="3" type="2" param1="15" />
+<item  id="4" type="6" param1="5" />
+<item  id="5" type="7" param1="5" />
+<item  id="6" type="7" param1="-1" />
+<item  id="7" type="3" param1="10" param2="1" />
+<item  id="8" type="3" param1="10" param2="2" />
+<item  id="9" type="4" param1="10" />
+<item  id="10" type="4" param1="8" />
+<item  id="11" type="5" param1="10" param2="50" />
+<item  id="2204" type="2204" param1="-1" />
+<item  id="2205" type="2205" param1="-1" />
+</spriteskillstatus>
+<statustype>
+<item  id="1" name="伤害" desp="每隔一段时间减指定hp值" />
+<item  id="2" name="晕眩" desp="中该状态者会暂停一切动作" />
+<item  id="3" name="兴奋" desp="增加攻击力" />
+<item  id="4" name="防御" desp="减免敌方的伤害" />
+<item  id="5" name="冰" desp="经过减速" />
+<item  id="6" name="回头" desp="回头多少时间" />
+<item  id="7" name="混乱" desp="变成我方的人" />
+</statustype>
+<prop>
+<item  id="4" name="万能蘑菇" desp="棋盘上随机选择一个珠子变为蘑菇" texture="prop_mushroom.png" price="1000" />
+</prop>
+<copyprop>
+<item  id="1" copy_id="1" prop_id="1" prop_num="5" />
+<item  id="2" copy_id="1" prop_id="2" prop_num="5" />
+<item  id="3" copy_id="1" prop_id="3" prop_num="5" />
+<item  id="4" copy_id="1" prop_id="4" prop_num="5" />
+<item  id="5" copy_id="7" prop_id="2" prop_num="5" />
+</copyprop>
+<copyskill>
+<item  id="1" copy_id="1" skill_id="15" />
+<item  id="2" copy_id="1" skill_id="6" />
+<item  id="3" copy_id="1" skill_id="1" />
+<item  id="4" copy_id="1" skill_id="9" />
+<item  id="5" copy_id="2" skill_id="15" />
+<item  id="6" copy_id="2" skill_id="6" />
+<item  id="7" copy_id="2" skill_id="1" />
+<item  id="8" copy_id="2" skill_id="9" />
+<item  id="9" copy_id="3" skill_id="15" />
+<item  id="10" copy_id="3" skill_id="6" />
+<item  id="11" copy_id="3" skill_id="1" />
+<item  id="12" copy_id="3" skill_id="9" />
+<item  id="13" copy_id="4" skill_id="15" />
+<item  id="14" copy_id="4" skill_id="6" />
+<item  id="15" copy_id="4" skill_id="1" />
+<item  id="16" copy_id="4" skill_id="9" />
+<item  id="17" copy_id="5" skill_id="15" />
+<item  id="18" copy_id="5" skill_id="6" />
+<item  id="19" copy_id="5" skill_id="1" />
+<item  id="20" copy_id="5" skill_id="9" />
+<item  id="21" copy_id="6" skill_id="15" />
+<item  id="22" copy_id="6" skill_id="6" />
+<item  id="23" copy_id="6" skill_id="1" />
+<item  id="24" copy_id="6" skill_id="9" />
+<item  id="25" copy_id="7" skill_id="15" />
+<item  id="26" copy_id="7" skill_id="6" />
+<item  id="27" copy_id="7" skill_id="1" />
+<item  id="28" copy_id="7" skill_id="9" />
+<item  id="29" copy_id="8" skill_id="15" />
+<item  id="30" copy_id="8" skill_id="6" />
+<item  id="31" copy_id="8" skill_id="1" />
+<item  id="32" copy_id="8" skill_id="9" />
+<item  id="33" copy_id="9" skill_id="15" />
+<item  id="34" copy_id="9" skill_id="6" />
+<item  id="35" copy_id="9" skill_id="1" />
+<item  id="36" copy_id="9" skill_id="9" />
+<item  id="37" copy_id="10" skill_id="15" />
+<item  id="38" copy_id="10" skill_id="6" />
+<item  id="39" copy_id="10" skill_id="1" />
+<item  id="40" copy_id="10" skill_id="9" />
+<item  id="41" copy_id="11" skill_id="15" />
+<item  id="42" copy_id="11" skill_id="6" />
+<item  id="43" copy_id="11" skill_id="1" />
+<item  id="44" copy_id="11" skill_id="9" />
+<item  id="45" copy_id="12" skill_id="15" />
+<item  id="46" copy_id="12" skill_id="6" />
+<item  id="47" copy_id="12" skill_id="1" />
+<item  id="48" copy_id="12" skill_id="9" />
+<item  id="49" copy_id="13" skill_id="15" />
+<item  id="50" copy_id="13" skill_id="6" />
+<item  id="51" copy_id="13" skill_id="1" />
+<item  id="52" copy_id="13" skill_id="9" />
+<item  id="53" copy_id="14" skill_id="15" />
+<item  id="54" copy_id="14" skill_id="6" />
+<item  id="55" copy_id="14" skill_id="1" />
+<item  id="56" copy_id="14" skill_id="9" />
+<item  id="57" copy_id="15" skill_id="15" />
+<item  id="58" copy_id="15" skill_id="6" />
+<item  id="59" copy_id="15" skill_id="1" />
+<item  id="60" copy_id="15" skill_id="9" />
+<item  id="61" copy_id="16" skill_id="15" />
+<item  id="62" copy_id="16" skill_id="6" />
+<item  id="63" copy_id="16" skill_id="1" />
+<item  id="64" copy_id="16" skill_id="9" />
+<item  id="65" copy_id="17" skill_id="15" />
+<item  id="66" copy_id="17" skill_id="6" />
+<item  id="67" copy_id="17" skill_id="1" />
+<item  id="68" copy_id="17" skill_id="9" />
+<item  id="69" copy_id="18" skill_id="15" />
+<item  id="70" copy_id="18" skill_id="6" />
+<item  id="71" copy_id="18" skill_id="1" />
+<item  id="72" copy_id="18" skill_id="9" />
+<item  id="73" copy_id="19" skill_id="15" />
+<item  id="74" copy_id="19" skill_id="6" />
+<item  id="75" copy_id="19" skill_id="1" />
+<item  id="76" copy_id="19" skill_id="9" />
+<item  id="77" copy_id="20" skill_id="15" />
+<item  id="78" copy_id="20" skill_id="6" />
+<item  id="79" copy_id="20" skill_id="1" />
+<item  id="80" copy_id="20" skill_id="9" />
+<item  id="81" copy_id="21" skill_id="15" />
+<item  id="82" copy_id="21" skill_id="6" />
+<item  id="83" copy_id="21" skill_id="1" />
+<item  id="84" copy_id="21" skill_id="9" />
+<item  id="85" copy_id="22" skill_id="15" />
+<item  id="86" copy_id="22" skill_id="6" />
+<item  id="87" copy_id="22" skill_id="1" />
+<item  id="88" copy_id="22" skill_id="9" />
+<item  id="89" copy_id="23" skill_id="15" />
+<item  id="90" copy_id="23" skill_id="6" />
+<item  id="91" copy_id="23" skill_id="1" />
+<item  id="92" copy_id="23" skill_id="9" />
+<item  id="93" copy_id="24" skill_id="15" />
+<item  id="94" copy_id="24" skill_id="6" />
+<item  id="95" copy_id="24" skill_id="1" />
+<item  id="96" copy_id="24" skill_id="9" />
+<item  id="97" copy_id="25" skill_id="15" />
+<item  id="98" copy_id="25" skill_id="6" />
+<item  id="99" copy_id="25" skill_id="1" />
+<item  id="100" copy_id="25" skill_id="9" />
+<item  id="101" copy_id="26" skill_id="15" />
+</copyskill>
+<shop>
+<item  id="1" prop_id="1" num="5" price="100" />
+<item  id="2" prop_id="2" num="10" price="500" />
+<item  id="3" prop_id="3" num="5" price="500" />
+<item  id="4" prop_id="4" num="10" price="1000" />
+</shop>
+<monsterSkill>
+<item  id="1" name="谢谢" desp="谢谢" cool_time="10" tex1="shit1.png" tex2="shit2.png" aggression="800" />
+<item  id="2" name="大火球" desp="大火球爆炸" cool_time="10" tex1="shit1.png" tex2="shit2.png" aggression="800" />
+<item  id="3" name="召唤群狼" desp="召唤出两只狼" cool_time="10" callMonsterId="24" aggression="800" />
+<item  id="4" name="盖亚能量炮" desp="攻击栅栏" cool_time="10" aggression="800" />
+<item  id="5" name="旋转攻击" desp="旋转攻击栅栏" cool_time="10" tex1="m_ss_rotate(1).png" tex2="m_ss_rotate(2).png" aggression="800" />
+<item  id="6" name="蓄力攻击" desp="蓄力攻击栅栏" cool_time="10" aggression="800" />
+<item  id="7" name="召唤怪撞墙" cool_time="10" aggression="800" />
+</monsterSkill>
+<hero>
+{=if is_array($data['hero_array'])=}
+   {=foreach from=$data['hero_array'] item="val"=}
+   <item id="{=$val['field_1']=}" name="{=$val['field_2']=}" action="{=$val['field_3']=}" atk="{=$val['field_4']=}"
+	tiledId="{=$val['field_5']=}" skillId="{=$val['field_6']=}" isGrow="{=$val['field_7']=}" 
+   frowId="{=$val['field_8']=}" payType="{=$val['field_9']=}" costGold="{=$val['field_10']=}" 
+   costRMB="{=$val['field_11']=}" skillname="{=$val['field_12']=}" skilldec="{=$val['field_13']=}" 
+   bones_png="{=$val['field_14']=}" bones_plist="{=$val['field_15']=}" bones_json="{=$val['field_16']=}" 
+   bones_name="{=$val['field_17']=}"/>   
+   {=/foreach=}
+{=/if=}
+</hero>
+<element>
+{=if is_array($data['color_array'])=}
+   {=foreach from=$data['color_array'] item="val"=}
+   <item id="{=$val['field_1']=}" name="{=$val['field_2']=}"  pic="{=$val['field_3']=}" maxLV="{=$val['field_4']=}" 
+	ATKPlusArr="{=$val['field_5']=}" payTypeArr="{=$val['field_6']=}"  costGoldArr="{=$val['field_7']=}" 
+	costRMBArr="{=$val['field_8']=}" maxLVCostRMB="{=$val['field_9']=}"/> 
+   {=/foreach=}
+{=/if=}
+</element>
+<buyglod>
+{=if is_array($data['shop_array'])=}
+   {=foreach from=$data['shop_array'] item="val"=}
+   <item id="{=$val['field_1']=}" name="{=$val['field_2']=}" icon="{=$val['field_3']=}" glod="{=$val['field_4']=}" 
+   payType="{=$val['field_5']=}"  costGold="{=$val['field_6']=}" price="{=$val['field_7']=}" dec="{=$val['field_8']=}" /> 
+   {=/foreach=}
+{=/if=}
+</buyglod>
+</basedata>

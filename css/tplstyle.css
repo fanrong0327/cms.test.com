@@ -1,0 +1,130 @@
+body{font:12px/24px "宋体"; color:#333333}
+/*头部*/
+.header {background:url(../images/pages/body_bg_new.png) repeat-x left top; }
+.header_box{ width:960px; margin:0px auto;}
+/*顶部条*/
+.top{height:30px; z-index:8888; font-size:12px; margin:0  }
+.top_l{float:left; line-height:30px;}
+.top_r{ float:right; line-height:22px; }
+.top_r a, .top_r .icon{display:inline-block; vertical-align:middle; margin-right:12px; margin-top:3px; height:22px;}
+.top_r .icon{ background:url(../images/pages/ksw_bgbg.png) no-repeat; text-indent:-9999px;}
+.top_r .top_reg{background-position:-285px -754px; width:44px;}
+.top_r .top_reg:hover{background-position:-285px -778px; }
+.top_r .top_log{background-position:-341px -754px; width:44px; }
+.top_r .top_log:hover{background-position:-341px -778px; }
+.top_r .top_sina{background-position:-222px -754px; width:22px;}
+.top_r .top_sina:hover{background-position:-222px -778px; }
+.top_r .top_qq{background-position:-257px -754px; width:22px;}
+.top_r .top_qq:hover{background-position:-257px -778px; }
+.top iframe{display:none; }
+
+.top span{display:block; font-size:12px; vertical-align:top; line-height:1em; cursor:pointer;  padding:9px 0px 9px 0px; _padding:9px 0px 8px 0px; }
+.top span .aaa, .top span .bbb{padding:0px 8px; line-height:1em; font-size:12px; display:block; vertical-align:top;}
+.top span img{padding-left:4px; background:none; }
+.top .m_div{float:right; position:relative; }
+.top .my_index{position:relative; }
+.top .my_index .yx_ts{background:url(http://img.kanshu.com/public/images/emailtishi.png) repeat scroll 0 0 transparent; height:75px; text-align:left; left:14px; position:absolute; overflow:hidden; top:21px; width:371px; }
+.top .my_index .yx_ts p{display:block; text-align:center; margin:15px 0px 0px 0px; padding-left:40px; float:left; width:300px; line-height:24px; }
+.top .my_index .yx_ts p a{color:#4EA7E9; }
+.top .my_index .yx_ts p .aline{text-decoration:underline; }
+.top .my_index .yx_ts p a:hover{color:#ff6600; text-decoration:underline; }
+.top .my_index .a_close{float:right; margin-top:10px; padding-right:5px; display:block; height:20px; width:20px; }
+.top .xiaoxi_main{float:right; padding:0px 1px; position:relative; }
+.top .xiaoxi{clear:both; }
+.top .xiaoxi_div{position:absolute; top:30px; z-index:10; width:160px; padding:5px; text-align:right; border:1px solid #ccc; border-top:0; background:#fff; right:0px; _right:-1px; }
+.top .xiaoxi_div .p_all a{text-align:left; padding-left:12px; }
+.top .xiaoxi_div a{display:block; line-height:28px; height:28px; color:#727171; padding-right:12px; }
+.top .xiaoxi_div a b{color:#4EA7E9; font-weight:100; }
+.top .xiaoxi_div a:hover{background:#f7f7f7; text-decoration:none; }
+/*消息提示框*/
+
+.top .xxts_div{position:absolute; top:30px; z-index:10; width:160px; padding:5px; right:-1px; _right:0px; text-align:right; border:1px solid #ccc; border-top:0; background:#fff; }
+.top .xxts_div a{display:block; line-height:28px; height:28px; color:#727171; padding-right:12px; }
+.top .xxts_div a b{color:#4EA7E9; font-weight:100; }
+.top .xxts_div a:hover{background:#f7f7f7; text-decoration:none; }
+.top .gb_a{height:4px; position:relative; }
+.top .gb_a a{display:block; background:url(http://img.kanshu.com/author/images/xxxx.png) 4px 5px no-repeat; height:15px; width:18px; position:absolute; top:-5px; right:-4px; color:#727171; float:right; text-align:center; padding:0; font-size:10px; }
+.top .xxts_div .gb_a a:hover{background:url(http://img.kanshu.com/author/images/xxxx.png) 4px 5px no-repeat; text-decoration:none; }
+/*菜单*/
+.top .caidan_div{width:95px; position:absolute; z-index:10; text-align:left; border:1px solid #ccc; border-top:0; padding:5px; top:30px; background:#fff; right:0px; _right:-1px; }
+.top #zjred{z-index:8887; }
+.top .my_ksw{background:url(http://img.kanshu.com/mhome/images/fx_17.jpg) repeat-x left bottom; text-align:left; height:30px; line-height:30px; }
+.top i{font-style:normal; }
+.top .caidan_div .line{line-height:1px; font-size:1px; margin:4px 0px; height:1px; background:url(http://img.kanshu.com/mhome/images/biankuang.gif) repeat-x; }
+.top .caidan_div p a{display:block; line-height:28px; height:28px; color:#727171; padding-left:10px; }
+.top .caidan_div p a:hover{background:#f7f7f7; text-decoration:none; }
+
+.seach{float:left; width:445px; margin-top:10px; background:url(../images/seach_bg_08.png) repeat-x; }
+.seach .seach_menu{float:left; margin-right:2px; background:url(../images/pages/ksw_bgbg.png) -81px -57px no-repeat; width:75px; height:36px; position:relative; z-index:999; }
+.seach .s2{background:url(../images/pages/ksw_bgbg.png) 0px -57px no-repeat; width:75px; height:36px; position:relative; }
+.seach_menu p{display:block; padding-right:16px; text-align:center; line-height:34px; height:34px; margin:2px 0px 0px 2px; text-align:center; }
+.seach .seach_menu ul{display:block; width:71px; top:32px; left:2px; position:absolute; line-height:30px; border:1px solid #ddd; border-top:0; background:#fff; height:auto; }
+.seach .seach_menu ul span{display:block; text-align:center; line-height:26px; cursor:pointer; }
+.seach .seach_menu ul a:hover{background:#f9f9f9; text-decoration:none; }
+.seach .seach_txt{float:left; }
+.seach .seach_txt input{height:28px; width:258px; border:0; font-size:12px; line-height:28px; margin-top:4px; padding:0px 0px 0px 3px; }
+.seach .seach_btn{float:right; width:98px; height:36px; background:#ff6600; }
+.seach .seach_btn .ss_btn1{background:url(../images/pages/ksw_bgbg.png) -175px -58px no-repeat; width:98px; height:36px; border:0; cursor:pointer; }
+.seach .seach_btn .ss_btn2{background:url(../images/pages/ksw_bgbg.png) -700px -58px no-repeat; width:98px; height:36px; border:0; cursor:pointer; }
+.seach .s_hot{clear:both; line-height:28px; padding-top:5px; color:#888; display:block; }
+.head_info{float:right; width:210px; margin-top:10px; }
+.sqzz_btn{float:left; width:110px; height:35px; }
+.wdsj_btn{float:left; width:100px; height:35px; position:relative; }
+.head_info .wdsj_btn .sp_data{position:absolute; top:-10px; left:50px; z-index:10; background:url(../images/pages/ksw_bgbg.png) no-repeat -315px -594px; line-height:16px; display:block; height:19px; width:36px; text-align:center; color:#fff; font-weight:100; }
+.head_info .sqzz_btn a{display:block; background:url(../images/pages/ksw_bgbg.png) no-repeat -295px -58px; height:35px; width:64px; padding-left:36px; line-height:35px; font-weight:bold; }
+.head_info .sqzz_btn a:hover{background:url(../images/pages/ksw_bgbg.png) no-repeat -615px -174px; }
+.head_info .wdsj_btn .sj_a{display:block; background:url(../images/pages/ksw_bgbg.png) no-repeat -405px -58px; height:35px; width:86px; padding-left:14px; line-height:35px; font-weight:bold; }
+.head_info .wdsj_btn .sj_a2{background:url(../images/pages/ksw_bgbg.png) no-repeat -550px -58px; height:36px; width:86px; padding-left:14px; font-weight:bold; z-index:99; position:relative; line-height:35px; }
+.logo{float:left; width:225px; height:65px; }
+.top_header{width:960px; margin:0px auto; height:80px; }
+.top_header .logo{padding-top:10px; }
+.top_header .seach{margin-top:20px; background:url(http://img.kanshu.com/2013/test/images/bg_search_new.png) no-repeat; }
+.top_header .seach_menu{background:url(../images/pages/icon_arr_d.png) 50px 17px no-repeat; }
+.top_header .s2{background:url(../images/pages/icon_arr_up.png) 50px 17px no-repeat; }
+.top_header .seach{margin-top:20px; color:#888888; }
+.top_header .seach input{color:#888888; }
+.top_header .seach .seach_btn{width:76px; background:none; }
+.top_header .seach .seach_btn input{width:100%; height:36px; border:0 none; background:none; cursor:pointer; }
+.top_header .head_info{width:auto; margin-top:20px; }
+.top_header .seach_menu ul{width:60px; top:32px; left:0px; }
+.top_header .sqzz_btn{float:left; margin-left:15px; width:81px; height:35px; }
+.top_header .sqzz_btn a{padding-left:40px; width:41px; background:url(../images/pages/btn_checkin.png) no-repeat 0 0; }
+.top_header .sqzz_btn a:hover{background:url(../images/pages/btn_checkin.png) no-repeat  }
+.top_nav{width:100%; margin-bottom:10px; }
+.top_nav a{font-size:14px; }
+.top_nav_box{height:40px; line-height:40px; }
+.top_nav_box ul li, .top_nav_cata ul li{float:left; position:relative }
+.top_nav_box ul li{height:40px; }
+.top_nav_box ul li.new img{position:absolute; top:-5px; right:0; }
+.top_nav_box ul li a, .top_nav_cata ul li a{display:inline-block; }
+.top_nav_box ul li a{height:40px; padding:0 20px; color:#ffffff; }
+.top_nav_box ul li a:hover{color:#ffffff; background-color:#222222; text-decoration:none }
+.top_nav_box ul li a.select{background-color:#ff9900; }
+.top_nav_cata{height:35px; line-height:35px; }
+.top_nav_cata ul li{padding:0 15px; }
+
+/* 书架记录 */
+.book_record{background:#FFFFFF; border:1px solid #DDDDDD; position:absolute; right:0; top:33px; width:300px; z-index:3; }
+.record_tab, .record_tip{width:100%; line-height:32px; overflow:hidden }
+.record_tip, .record_more{color:#666666; background-color:#f7f7f7; text-align:center }
+.record_tab{position:relative }
+.record_tab span{display:block; float:left; width:50%; height:32px; text-align:center; font-size:14px; border-bottom:1px solid #DDDDDD; background:url(../images/pages/ctitlebg.jpg) repeat-x -1px; cursor:pointer }
+.record_tab span.cur{color:#eb6100; background:#ffffff none; border:0 none }
+.record_tab span.sep{position:absolute; width:0; left:50%; border-right:1px solid #dddddd; }
+.record_inner .record_none{height:150px; line-height:150px; text-align:center; font-size:14px; color:#666666; }
+.record_inner{max-height:480px; padding:5px 10px; }
+.record_item{border-bottom:1px dashed #dddddd; display:block; margin-bottom:6px; padding-bottom:6px; }
+.record_item p, .record_item span{height:24px; line-height:24px; color:#888888; overflow:hidden; vertical-align:middle }
+.record_item span{display:inline-block; }
+.record_item .item_name, .record_item .item_chap{width:180px; }
+.record_item .item_link{float:right }
+.record_item .item_chap{width:120px; }
+.record_more{text-align:right; padding-right:15px }
+.record_more a, .record_item .item_link a, .record_none a{color:#00a0e9; }
+.record_btn a{display:block; background:url(../images/pages/ksw_bgbg.png) no-repeat -405px -58px; height:35px; width:86px; padding-left:14px; line-height:35px; font-weight:bold; }
+.record_btn a:hover, .record_btn a.cur{background:url(../images/pages/ksw_bgbg.png) no-repeat -550px -58px; text-decoration:none }
+.book_record a:hover{color:#eb6100 }
+
+
+
+

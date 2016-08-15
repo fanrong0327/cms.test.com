@@ -1,0 +1,77 @@
+<style type="text/css">
+    td { line-height: 20px; }
+</style>
+<h1> {=$data['title']=} </h1>
+<div class="bloc">
+    <div class="title"> {=if isset($data['subtitle'])=}{=$data['subtitle']=}{=/if=} <a href="content/add?siteid={=$siteid=}&tplid={=$tplid=}" title="添加内容"><img src="img/icons/actions/edit.png" alt="" />添加内容</a>
+        &nbsp;&nbsp;&nbsp;
+        {=if isset($querytype) && !empty($querytype)=}
+        <input type="text" name="keywords" id="keywords" value="{=if isset($keywords)=}{=$keywords=}{=/if=}"/>
+        <select name="fieldtype" id="fieldtype">
+            {=foreach from=$querytype item="list"=}
+            <option value="{=$list['id']=}" {=if $list['id'] eq $fieldtype=}selected{=/if=}>{=$list['name']=}</option>
+            {=/foreach=}
+        </select>
+        <input type="button"  value="搜索" onclick="seach()"/>
+        {=/if=}
+    </div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> URL </th>
+                    <th> 创建时间 </th>
+                    <th> 创建者 </th>
+                    <th> 发布时间 </th>
+                    {=if is_array($adddisplay)=}
+                    {=foreach from=$adddisplay item="item"=}
+                    <th>{=$item['name']=}</th>
+                    {=/foreach=}
+                    {=/if=}
+                    <th> 操作 </th>
+                </tr>
+            </thead>
+            <tbody>
+                {=if is_array($data['lists'])=}
+                {=foreach from=$data['lists'] item="item"=}
+                <tr>
+                    <td> {=$item['id']=} </td>
+                    <td> <a href="{=$data.publishurl=}/{=$item['url']=}" target="_blank">{=$item['url']=}</a></td>
+                    <td> {=$item['createtime']=}</td>
+                    <td> {=$item['creater']=}</td>
+                    <td> {=$item['publishtime']=}</td>
+                    {=if is_array($adddisplay)=}
+                    {=foreach from=$adddisplay item="ditem"=}
+                    <td> {=$item[$ditem.value]=}</td>
+                    {=/foreach=}
+                    {=/if=}
+
+                    <td class="actions">
+                        {=if $siteid eq 5 && $tplid eq 1050=}
+                        <a href="content/delete?siteid={=$item['siteid']=}&tplid={=$item['templateid']=}&id={=$item['id']=}" title="编辑" onclick="return confirm('确认删除？');">删除</a>
+                        {=elseif $siteid eq 11 && ($tplid eq 1016 or $tplid eq 1014)=}
+                        <a href="content/delete?siteid={=$item['siteid']=}&tplid={=$item['templateid']=}&id={=$item['id']=}" title="编辑" onclick="return confirm('确认删除？');">删除</a>
+                        {=/if=}
+                        <a href="content/edit?siteid={=$item['siteid']=}&tplid={=$item['templateid']=}&id={=$item['id']=}" title="编辑">编辑</a>
+                        <a href="content/preview?siteid={=$item['siteid']=}&tplid={=$item['templateid']=}&id={=$item['id']=}" title="预览" target="_blank">预览</a>
+                        <a href="content/publish?siteid={=$item['siteid']=}&tplid={=$item['templateid']=}&id={=$item['id']=}" title="发布" onclick="return confirm('确认发布？');">发布</a></td>
+                </tr>
+                {=/foreach=}
+                {=/if=}
+            </tbody>
+        </table><br/>
+        {=$page_html nofilter=}
+    </div>
+</div>
+
+<script>
+            function seach() {
+            var siteid = {=$siteid=};
+                    var tplid = {=$tplid=};
+                    var fieldtype = $("#fieldtype").val();
+                    var keywords = $("#keywords").val();
+                    hpage = 1;
+                    window.location.href = "/content?page=" + hpage + "&siteid=" + siteid + "&tplid=" + tplid + "&fieldtype=" + fieldtype + "&keywords=" + keywords;
+            }
+</script>
